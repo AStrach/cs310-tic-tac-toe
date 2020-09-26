@@ -14,16 +14,29 @@ public class TicTacToeView {
         
         keyboard = new Scanner(System.in);
         
+
     }
 	
     public TicTacToeMove getNextMove(boolean isXTurn) {
         
+
         /* Prompt the player to enter the row and the column of their next move.
            Return as a TicTacToeMove object. */
         
-        // INSERT YOUR CODE HERE
+           String nextLine = "Player ";
+           if (isXTurn){
+               System.out.println("1 (X) Move:");
+               System.out.println("Enter the row and column numbers, separated by a space:");
+           }
+           else{
+               System.out.println("2 (O) Move:");
+                System.out.println("Enter the row and column numbers, separated by a space: ");
+           }
+           
+           String input = keyboard.nextLine();
+           String[] parts = input.split(" ");
 
-        return null; // remove this line later!
+        return new TicTacToeMove(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
 
     }
 
